@@ -1,0 +1,117 @@
+Index: README.md
+===================================================================
+diff --git a/README.md b/README.md
+deleted file mode 100644
+--- a/README.md	(revision 71d2bbc24b79c1b575cf5686f9d6714e897e5b47)
++++ /dev/null	(revision 71d2bbc24b79c1b575cf5686f9d6714e897e5b47)
+@@ -1,2 +0,0 @@
+-# LearnPython
+-# Logic_Keo-Bua-bao
+Index: API/API_pycoingecko_to_vnd.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/API/API_pycoingecko_to_vnd.py b/API/API_pycoingecko_to_vnd.py
+new file mode 100644
+--- /dev/null	(date 1683099811714)
++++ b/API/API_pycoingecko_to_vnd.py	(date 1683099811714)
+@@ -0,0 +1,27 @@
++import pandas as pd
++import plotly.graph_objects as go
++import datetime
++from pycoingecko import CoinGeckoAPI
++
++coin = CoinGeckoAPI()
++
++coin_data = coin.get_coin_market_chart_by_id(id='bitcoin', vs_currency='vnd', days=30)
++
++data_vnd_prices = coin_data['prices']
++
++data = pd.DataFrame(data_vnd_prices, columns=['Times', 'Price'])
++
++data['date'] = data['Times'].apply(lambda d: datetime.date.fromtimestamp(d / 1000.0))
++
++candlestick_data = data.groupby(data.date, as_index=False).agg({"Price": ['min', 'max', 'first', 'last']})
++
++fig = go.Figure(data=[go.Candlestick(x=candlestick_data['date'],
++                                     open=candlestick_data['Price']['first'],
++                                     high=candlestick_data['Price']['max'],
++                                     low=candlestick_data['Price']['min'],
++                                     close=candlestick_data['Price']['last'])
++                      ])
++
++fig.update_layout(xaxis_rangeslider_visible=False)
++
++fig.show()
+Index: Learning/try1.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>def sortPrint():\r\n    num = []\r\n    for i in range(1, 10):\r\n        num.append(i)\r\n    return num\r\n\r\n\r\na = 0\r\ndef x(a):\r\n    a += 10\r\n    return a\r\n\r\na = x(a)\r\nprint(a)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Learning/try1.py b/Learning/try1.py
+--- a/Learning/try1.py	(revision 71d2bbc24b79c1b575cf5686f9d6714e897e5b47)
++++ b/Learning/try1.py	(date 1683035119693)
+@@ -1,14 +1,32 @@
+-def sortPrint():
+-    num = []
+-    for i in range(1, 10):
+-        num.append(i)
+-    return num
++# s = '55faaAAA222'
++
++# count = {}
++
++# for i in s:
++#     if i in count:
++#         count[i] += 1
++#     else:
++#         count[i] = 1
++
++# for k, a in sorted(count.items()):
++#     print(k, a)
+ 
++# print('--' * 10)
++# my_car = ['mec', 'g63', 'lamborghini', 'c300', 'c300', 'g63']
+ 
+-a = 0
+-def x(a):
+-    a += 10
+-    return a
++# convert_car = ' '.join(i for i in my_car)
+ 
+-a = x(a)
+-print(a)
+\ No newline at end of file
++# count_car = {}
++
++# for car in my_car:
++#     if car in count_car:
++#         count_car[car] += 1
++#     else:
++#         count_car[car] = 1
++        
++# for keys, values in count_car.items():
++#     print(keys, values)
++
++ar = '01234567'
++
++print(ar[::2])
+\ No newline at end of file
+Index: Python Project/Program-caculator-friut/README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Program-caculator-friut\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-16LE
+===================================================================
+diff --git a/Python Project/Program-caculator-friut/README.md b/Python Project/Program-caculator-friut/README.md
+--- a/Python Project/Program-caculator-friut/README.md	(revision bf8dc5788e0c57174932e8935a7b505a9dacbe1d)
++++ b/Python Project/Program-caculator-friut/README.md	(date 1682144062410)
+@@ -1,1 +1,1 @@
+-# Program-caculator-friut
++# Program-caculator-fruit
+diff --git a/API/project_api_test.py b/API/project_api_test.py
+new file mode 100644

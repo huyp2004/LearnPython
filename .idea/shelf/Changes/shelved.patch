@@ -1,0 +1,161 @@
+Index: Learning/try1.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>def sortPrint():\r\n    num = []\r\n    for i in range(1, 10):\r\n        num.append(i)\r\n    return num\r\n\r\n\r\na = 0\r\ndef x(a):\r\n    a += 10\r\n    return a\r\n\r\na = x(a)\r\nprint(a)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Learning/try1.py b/Learning/try1.py
+--- a/Learning/try1.py	(revision 855721925d96872404f06e70846ecc593719a9cb)
++++ b/Learning/try1.py	(date 1683100328562)
+@@ -1,14 +1,32 @@
+-def sortPrint():
+-    num = []
+-    for i in range(1, 10):
+-        num.append(i)
+-    return num
++# s = '55faaAAA222'
++
++# count = {}
++
++# for i in s:
++#     if i in count:
++#         count[i] += 1
++#     else:
++#         count[i] = 1
++
++# for k, a in sorted(count.items()):
++#     print(k, a)
+ 
++# print('--' * 10)
++# my_car = ['mec', 'g63', 'lamborghini', 'c300', 'c300', 'g63']
+ 
+-a = 0
+-def x(a):
+-    a += 10
+-    return a
++# convert_car = ' '.join(i for i in my_car)
+ 
+-a = x(a)
+-print(a)
+\ No newline at end of file
++# count_car = {}
++
++# for car in my_car:
++#     if car in count_car:
++#         count_car[car] += 1
++#     else:
++#         count_car[car] = 1
++        
++# for keys, values in count_car.items():
++#     print(keys, values)
++
++ar = '01234567'
++
++print(ar[::2])
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1683101137217)
++++ b/.idea/.gitignore	(date 1683101137217)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: .idea/LearnPython.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/LearnPython.iml b/.idea/LearnPython.iml
+new file mode 100644
+--- /dev/null	(date 1683099678059)
++++ b/.idea/LearnPython.iml	(date 1683099678059)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$">
++      <excludeFolder url="file://$MODULE_DIR$/venv" />
++    </content>
++    <orderEntry type="jdk" jdkName="Python 3.11" jdkType="Python SDK" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1683091683396)
++++ b/.idea/modules.xml	(date 1683091683396)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/LearnPython.iml" filepath="$PROJECT_DIR$/.idea/LearnPython.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1683091683424)
++++ b/.idea/vcs.xml	(date 1683091683424)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/Python Project" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/Python Project/Logic_Keo-Bua-bao" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/Python Project/Program-caculator-friut" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1683099678080)
++++ b/.idea/misc.xml	(date 1683099678080)
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11" project-jdk-type="Python SDK" />
++</project>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/profiles_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+new file mode 100644
+--- /dev/null	(date 1683091683504)
++++ b/.idea/inspectionProfiles/profiles_settings.xml	(date 1683091683504)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <settings>
++    <option name="USE_PROJECT_PROFILE" value="false" />
++    <version value="1.0" />
++  </settings>
++</component>
+\ No newline at end of file
