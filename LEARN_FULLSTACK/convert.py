@@ -1,4 +1,5 @@
 def menu_convert():
+    # Menu
     try:
         menu_choose = int(input('''Menu chọn
         1. Thoát
@@ -8,37 +9,29 @@ def menu_convert():
     except ValueError:
         return 'Bạn nhập sai menu'
 
-    if menu_choose == 1:
-        return "Chương trình đã thoát"
+    # Create Dictionary Key value Menu. Syntax 'key': 'lambda function': 'function convert'
+    menu_function = {
+        1: lambda: exit(),
+        2: lambda: run_convert('kg', 'g'),  # Function small to run Convert (Function big)
+        3: lambda: run_convert('m', 'mm')
+    }
 
-    elif menu_choose == 2:
-        try:
-            kg = float(input("Mời bạn nhập số kg: ") or 0)
-            gam = convert_to_gam(kg)
-            return f'{kg}kg bằng {gam} gam'
-        except ValueError:
-            return "Bạn nhập số kg không hợp lệ"
-
-    elif menu_choose == 3:
-        try:
-            m = int(input("Mời bạn nhập số mét: ") or 0)
-            mm = convert_to_mm(m)
-            return f'{m}m bằng {mm}mm'
-        except ValueError:
-            return "Bạn nhập số mét không hợp lệ"
-
-    else:
-        return "Không có chức năng này trong danh sách"
+    # Assign Number Menu to Dictionary and Create variable 'result' assign all
+    try:
+        result = menu_function[menu_choose]()  # Dictionary[key] and '()' run function
+        return result
+    except ValueError:
+        return 'Menu không hợp lệ'
 
 
-def convert_to_gam(kg):
-    gam = kg * 1000
-    return gam
-
-
-def convert_to_mm(m):
-    mm = m * 1000
-    return mm
+# From_unit: 'kg' or 'm', To_unit: 'g' or 'mm'
+def run_convert(from_unit, to_unit):
+    try:
+        num_convert = float(input(f"Nhập số {from_unit} chuyển đổi: ") or 0)
+        result_convert = num_convert * 1000  # Convert
+        return f'{num_convert} {from_unit} bằng {result_convert}{to_unit}'
+    except ValueError:
+        return "Bạn nhập số không hợp lệ"
 
 
 print(menu_convert())
